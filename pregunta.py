@@ -13,9 +13,7 @@ import pandas as pd
 
 
 def ingest_data():
-
-    #
-    # Inserte su código aquí
-    #
-
+    df = pd.read_csv('clusters_report.txt', sep='|')
+    df.columns = df.columns.str.lower().str.replace(' ', '_')
+    df['palabras clave'] = df['palabras clave'].str.replace(' ', ', ')
     return df
